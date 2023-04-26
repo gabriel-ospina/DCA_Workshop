@@ -43,7 +43,7 @@ export default class MainCard extends HTMLElement{
         const mainCardSection = this.ownerDocument.createElement('section');
 
         const tag = this.ownerDocument.createElement("app-tag");
-        tag.setAttribute(tagAttributes.tag, "Funciona");
+        tag.setAttribute(tagAttributes.tag, "funciona");
         
 
         mainCardSection.appendChild(tag);

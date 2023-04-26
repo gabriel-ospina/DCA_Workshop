@@ -1,5 +1,7 @@
 import { mainCardAttributes } from '../components/mainCard/mainCard';
 import '../components/export'
+import { dataTag } from '../service/data/dataTag/dataTag';
+import { tagAttributes } from '../components/tag/tag';
 
 class Main extends HTMLElement{
 
@@ -15,9 +17,12 @@ class Main extends HTMLElement{
     render(){
         if(this.shadowRoot)
         this.shadowRoot.innerHTML = ``
-    
-        const maincard = this.ownerDocument.createElement("app-maincard")
-        this.shadowRoot?.appendChild(maincard)
+        
+        dataTag.forEach((tagA) => {
+            const maincard = this.ownerDocument.createElement("app-maincard")
+            maincard.setAttribute(mainCardAttributes.tag, tagA.tag)
+            this.shadowRoot?.appendChild(maincard)
+            })
     }
 }
 
