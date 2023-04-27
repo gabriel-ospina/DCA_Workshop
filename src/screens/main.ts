@@ -2,7 +2,7 @@ import '../components/export'
 
 import { HeaderAtt } from '../components/header/header';
 import { mainCardAttributes } from '../components/mainCard/mainCard';
-import { SideSectionAtt } from '../components/sideSection/sideSection';
+import { MenuAtt } from '../components/menu/menu';
 
 import { dataMainCard } from '../service/data/dataMainCard';
 
@@ -30,9 +30,12 @@ class Main extends HTMLElement{
             
             const lowContainer = this.ownerDocument.createElement("div");
 
-                const SideSection = this.ownerDocument.createElement("side-section")
-                SideSection.setAttribute(SideSectionAtt.mainicon, "M11.7187 13.0625C13.1467 12.2375 14.1667 10.4844 14.1667 6.875C14.1667 0.859375 11.3333 0 8.5 0C5.66667 0 2.83333 0.859375 2.83333 6.875C2.83333 10.4844 3.85334 12.2375 5.28134 13.0625C6.23334 13.6125 7.36667 13.75 8.5 13.75C9.63333 13.75 10.7667 13.6125 11.7187 13.0625ZM4.25 15.125C1.90279 15.125 0 16.9718 0 19.25C0 20.7688 1.26853 22 2.83333 22H14.1667C15.7315 22 17 20.7688 17 19.25C17 16.9718 15.0972 15.125 12.75 15.125H4.25Z");
-                lowContainer.appendChild(SideSection)
+                const SideSection = this.ownerDocument.createElement("section")
+                    const menuSection = this.ownerDocument.createElement("app-menu")
+                    menuSection.setAttribute(MenuAtt.mainicon, "M11.7187 13.0625C13.1467 12.2375 14.1667 10.4844 14.1667 6.875C14.1667 0.859375 11.3333 0 8.5 0C5.66667 0 2.83333 0.859375 2.83333 6.875C2.83333 10.4844 3.85334 12.2375 5.28134 13.0625C6.23334 13.6125 7.36667 13.75 8.5 13.75C9.63333 13.75 10.7667 13.6125 11.7187 13.0625ZM4.25 15.125C1.90279 15.125 0 16.9718 0 19.25C0 20.7688 1.26853 22 2.83333 22H14.1667C15.7315 22 17 20.7688 17 19.25C17 16.9718 15.0972 15.125 12.75 15.125H4.25Z");
+                SideSection.appendChild(menuSection)
+            
+            lowContainer.appendChild(SideSection)
 
                 dataMainCard.forEach((tagA) => {
                     const maincard = this.ownerDocument.createElement("app-maincard")
