@@ -50,6 +50,11 @@ class Main extends HTMLElement{
                     maincard.setAttribute(mainCardAttributes.mtitle2, tagA.music.artist2)
                     maincard.setAttribute(mainCardAttributes.thumbnail3, tagA.music.thumbnail3)
                     maincard.setAttribute(mainCardAttributes.mtitle3, tagA.music.artist3)
+                    maincard.setAttribute(mainCardAttributes.name, tagA.user.name)
+                    maincard.setAttribute(mainCardAttributes.age, tagA.user.age)
+                    maincard.setAttribute(mainCardAttributes.gender, tagA.user.gender)
+                    maincard.setAttribute(mainCardAttributes.udistance, tagA.user.udistance)
+                    maincard.setAttribute(mainCardAttributes.image, tagA.user.image)
                     lowContainer?.appendChild(maincard)
                     });
         mainScreen.appendChild(lowContainer);
