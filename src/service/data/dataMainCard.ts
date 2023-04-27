@@ -1,4 +1,4 @@
-import { MainCardDataShape } from "../../types/data/dataTag/tagInterface"
+import { MainCardDataShape } from "../../types/data/dataMainCard/MainCardInterface"
 
 export const dataMainCard: MainCardDataShape[] =  [
 
