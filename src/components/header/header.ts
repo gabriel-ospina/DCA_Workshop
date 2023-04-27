@@ -1,5 +1,5 @@
-import { LogoAtt } from "../Logo/logo";
-import { AccountImgAtt } from "../accountImage/accountImage";
+import { LogoAtt } from "./Logo/logo";
+import { AccountImgAtt } from "./accountImage/accountImage";
 
 export enum HeaderAtt {
     "logo" = "logo",
