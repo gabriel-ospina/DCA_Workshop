@@ -3,8 +3,10 @@ import '../components/export'
 import { HeaderAtt } from '../components/header/header';
 import { mainCardAttributes } from '../components/mainCard/mainCard';
 import { MenuAtt } from '../components/menu/menu';
+import { NewMatchesAtt } from '../components/newMatches/newMatches';
 
 import { dataMainCard } from '../service/data/dataMainCard';
+import { dataNewMatches } from '../service/data/dataNewMatches';
 
 class Main extends HTMLElement{
 
@@ -36,8 +38,26 @@ class Main extends HTMLElement{
                     menuSection.setAttribute(MenuAtt.chaticon, "M4.32655 2.57004C3.33503 2.57004 2.53125 3.38614 2.53125 4.39285V17.8808C2.53125 18.8875 3.33503 19.7036 4.32655 19.7036H5.59217V24.0375L11.6283 19.7036H22.6735C23.665 19.7036 24.4688 18.8875 24.4688 17.8808V4.39285C24.4688 3.38614 23.665 2.57004 22.6735 2.57004H4.32655ZM0 4.39285C0 1.96675 1.93706 0 4.32655 0H22.6735C25.0629 0 27 1.96675 27 4.39285V17.8808C27 20.3069 25.0629 22.2737 22.6735 22.2737H12.3294L6.13664 26.703C4.78303 27.5276 3.06092 26.5376 3.06092 24.9348L3.06092 22.0828C1.28892 21.5332 0 19.8599 0 17.8808V4.39285Z");
                     menuSection.setAttribute(MenuAtt.safeiconin, "M15 22.5C19.1421 22.5 22.5 19.1421 22.5 15C22.5 10.8579 19.1421 7.5 15 7.5C10.8579 7.5 7.5 10.8579 7.5 15C7.5 19.1421 10.8579 22.5 15 22.5Z");
                     menuSection.setAttribute(MenuAtt.safeiconout, "M0 15C0 6.71573 6.71573 0 15 0C23.2843 0 30 6.71573 30 15C30 23.2843 23.2843 30 15 30C6.71573 30 0 23.2843 0 15ZM15 2.91005C8.32291 2.91005 2.91005 8.32291 2.91005 15C2.91005 21.6771 8.32291 27.0899 15 27.0899C21.6771 27.0899 27.0899 21.6771 27.0899 15C27.0899 8.32291 21.6771 2.91005 15 2.91005Z");
-                SideSection.appendChild(menuSection)
-            
+                
+                    SideSection.appendChild(menuSection)
+
+                    const newMatchSection = this.ownerDocument.createElement("section")
+
+                    const newMatTitle = this.ownerDocument.createElement("h1");
+                            const newMatText = this.ownerDocument.createTextNode("New Matches");
+                            newMatTitle.appendChild(newMatText)
+                        newMatchSection.appendChild(newMatTitle)
+
+                        dataNewMatches.forEach((newm) => {
+                            const newMatches = this.ownerDocument.createElement("new-matches")
+                            newMatches.setAttribute(NewMatchesAtt.img, newm.img);
+                            newMatches.setAttribute(NewMatchesAtt.age, String(newm.age));
+                            newMatches.setAttribute(NewMatchesAtt.name, newm.name);
+                            newMatchSection?.appendChild(newMatches)
+                        });
+
+                    SideSection.appendChild(newMatchSection)
+
             lowContainer.appendChild(SideSection)
 
                 dataMainCard.forEach((tagA) => {
