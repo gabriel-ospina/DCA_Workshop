@@ -1,5 +1,6 @@
 import { tagAttributes } from "../tag/tag";
 import { musicCardAtt } from "../cardMusic/cardMusic";
+import { userCardAtt } from "./userCard/userCard";
 
 export enum mainCardAttributes{
     "tag1" = "tag1",
@@ -12,7 +13,12 @@ export enum mainCardAttributes{
     "thumbnail2" = "thumbnail2",
     "mtitle2" = "mtitle2",
     "thumbnail3" = "thumbnail3",
-    "mtitle3" = "mtitle3"
+    "mtitle3" = "mtitle3",
+    "name" = "name",
+    "age" = "age",
+    "gender" = "gender",
+    "udistance" = "udistance",
+    "image" = "image"
 }
 
 export default class MainCard extends HTMLElement{
@@ -28,6 +34,11 @@ export default class MainCard extends HTMLElement{
     mtitle2: string = mainCardAttributes.mtitle2;
     thumbnail3: string = mainCardAttributes.thumbnail3;
     mtitle3: string = mainCardAttributes.mtitle3;
+    name: string = mainCardAttributes.name
+    age: string = mainCardAttributes.age
+    gender: string = mainCardAttributes.gender
+    udistance: string = mainCardAttributes.udistance
+    image: string = mainCardAttributes.image
 
     static get observedAttributes(){
         
@@ -43,6 +54,11 @@ export default class MainCard extends HTMLElement{
             mtitle2: null,
             thumbnail3: null,
             mtitle3: null,
+            name: null,
+            age: null,
+            gender: null,
+            udistance: null,
+            image: null,
         }
 
         return Object.keys(atts)
@@ -72,6 +88,15 @@ export default class MainCard extends HTMLElement{
         this.shadowRoot.innerHTML = ``;
 
         const mainCardSection = this.ownerDocument.createElement('section');
+
+        const userCard = this.ownerDocument.createElement("app-ucardsection");
+            userCard.setAttribute(userCardAtt.name, this.name);
+            userCard.setAttribute(userCardAtt.age, this.age);
+            userCard.setAttribute(userCardAtt.gender, this.gender);
+            userCard.setAttribute(userCardAtt.udistance, this.udistance);
+            userCard.setAttribute(userCardAtt.image, this.image);
+
+        mainCardSection.appendChild(userCard);
 
         const tagSection = this.ownerDocument.createElement("section");
             const tag = this.ownerDocument.createElement("app-tag");

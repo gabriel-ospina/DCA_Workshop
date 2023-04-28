@@ -17,6 +17,14 @@ export const dataMainCard: MainCardDataShape[] =  [
             artist2: "Beyoncé",
             thumbnail3: "https://media.discordapp.net/attachments/1010976865424506900/1088893191702458388/image_50.png?width=240&height=240",
             artist3: "J Balvin",
+        },
+
+        user: {
+            name: "David",
+            age: "20",
+            gender: "Male",
+            udistance: "120 miles away",
+            image: "https://media.discordapp.net/attachments/1010976865424506900/1088708981612085258/Mask_group.png?width=428&height=580",
         }
     }
 

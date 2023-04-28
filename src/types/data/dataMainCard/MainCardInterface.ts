@@ -13,5 +13,13 @@ export interface MainCardDataShape{
         artist2: string,
         thumbnail3: string,
         artist3: string,
+    },
+
+    user: {
+        name: string,
+        age: string,
+        gender: string,
+        udistance: string,
+        image: string
     }
 }
