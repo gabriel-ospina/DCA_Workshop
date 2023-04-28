@@ -35,6 +35,7 @@ export default class Logo extends HTMLElement {
     render(){
         if(this.shadowRoot)
         this.shadowRoot.innerHTML= `
+        <link rel="stylesheet" href="../src/components/header/Logo/logo.css">
         <svg>
             <path d="${this.logo}"></path>
         </svg>

@@ -35,6 +35,7 @@ export default class AccountImg extends HTMLElement {
     render(){
         if(this.shadowRoot)
         this.shadowRoot.innerHTML= `
+        <link rel="stylesheet" href="../src/components/header/accountImage/accountImage.css">
         <img src="${this.img}">
         `;
     }
