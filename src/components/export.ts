@@ -1,5 +1,5 @@
-export {default as AppTag} from './tag/tag'
-export {default as AppMusicCard} from './cardMusic/cardMusic'
+export {default as AppTag} from './mainCard/tag/tag'
+export {default as AppMusicCard} from './mainCard/cardMusic/cardMusic'
 export {default as Logo} from './header/Logo/logo'
 export {default as MainIcon} from './menu/mainIcon/mainIcon'
 export {default as ChatIcon} from './menu/chatIcon/chatIcon'

@@ -47,7 +47,9 @@ export default class Menu extends HTMLElement {
 
     render(){
         if(this.shadowRoot)
-        this.shadowRoot.innerHTML = ``;
+        this.shadowRoot.innerHTML = `
+        <link rel="stylesheet" href="../src/components/menu/menu.css">
+        `;
 
         const menuSection = this.ownerDocument.createElement("nav");
         

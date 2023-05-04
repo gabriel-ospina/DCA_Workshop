@@ -1,5 +1,5 @@
-import { tagAttributes } from "../tag/tag";
-import { musicCardAtt } from "../cardMusic/cardMusic";
+import { tagAttributes } from "./tag/tag";
+import { musicCardAtt } from "./cardMusic/cardMusic";
 import { userCardAtt } from "./userCard/userCard";
 
 export enum mainCardAttributes{
