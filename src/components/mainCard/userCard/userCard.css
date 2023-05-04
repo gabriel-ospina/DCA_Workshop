@@ -1,0 +1,11 @@
+.user-card{
+    width: 307px;
+    height: 507px;
+    border-radius: 16px;
+    box-shadow: 0 0 26px 0 rgba(129, 108, 173, 0.35);
+}
+
+app-userdetail{
+    position: relative;
+    top: -126px;
+}

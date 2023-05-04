@@ -42,7 +42,7 @@ export default class AppTag extends HTMLElement{
     render(){
         if(this.shadowRoot)
         this.shadowRoot.innerHTML = `
-        <link rel="stylesheet" href="../src/components/tag/tag.css">
+        <link rel="stylesheet" href="../src/components/mainCard/tag/tag.css">
         <div class="tag-section">
             <div><p>${this.tag1}</p></div>          
         </div>

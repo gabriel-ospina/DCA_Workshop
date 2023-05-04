@@ -30,7 +30,8 @@ export default class AppUserImage extends HTMLElement{
     render(){
         if(this.shadowRoot)
         this.shadowRoot.innerHTML = `
-        <div style="background-image: url('${this.image}');">
+        <link rel="stylesheet" href="../src/components/mainCard/userCard/userImage/userImage.css">
+        <div class="user-image" style="background-image: url('${this.image}');">
         </div>
         `
     }

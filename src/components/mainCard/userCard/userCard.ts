@@ -53,9 +53,10 @@ export default class AppUserCard extends HTMLElement {
 
     render(){
         if(this.shadowRoot)
-        this.shadowRoot.innerHTML=`<link rel="stylesheet" href="../src/components/header/header.css">`;
+        this.shadowRoot.innerHTML=`<link rel="stylesheet" href="../src/components/mainCard/userCard/userCard.css">`;
 
         const userCardSection = this.ownerDocument.createElement("section");
+            userCardSection.setAttribute("class","user-card")
 
             const userImage = this.ownerDocument.createElement("app-userimage");
             userImage.setAttribute(userImageAttributes.image, this.image??"");

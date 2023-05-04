@@ -44,7 +44,7 @@ export default class AppMusicCard extends HTMLElement{
     render(){
         if(this.shadowRoot)
         this.shadowRoot.innerHTML = `
-        <link rel="stylesheet" href="../src/components/cardMusic/cardMusic.css">
+        <link rel="stylesheet" href="../src/components/mainCard/cardMusic/cardMusic.css">
         <div>
             <div class="music-card" style='background-image: url("${this.thumbnail1}");'></div>
             <p>${this.mtitle1}</p>

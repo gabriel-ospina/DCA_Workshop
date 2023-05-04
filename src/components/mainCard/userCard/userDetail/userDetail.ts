@@ -39,6 +39,7 @@ export default class AppUserDetail extends HTMLElement{
     render(){
         if(this.shadowRoot)
         this.shadowRoot.innerHTML = `
+        <link rel="stylesheet" href="../src/components/mainCard/userCard/userDetail/userDetail.css">
         <section>
             <span>
                 <h1>${this.name}</h1>
@@ -46,7 +47,9 @@ export default class AppUserDetail extends HTMLElement{
             </span>
             <p>${this.gender}</p>
             <span>
-                <svg></svg>
+                <svg>
+                    
+                </svg>
                 <p>${this.udistance}</p>
             </span>
         </section>
