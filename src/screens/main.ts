@@ -9,7 +9,7 @@ import { NewMatchesAtt } from '../components/newMatches/newMatches';
 import { dataMainCard } from '../service/data/dataMainCard';
 import { dataNewMatches } from '../service/data/dataNewMatches';
 
-class Main extends HTMLElement{
+export default class Main extends HTMLElement{
 
     constructor(){
         super();
