@@ -9,6 +9,8 @@ export {default as cardButton} from './mainCard/userCard/cardButton/cardButton'
 export {default as userImage} from './mainCard/userCard/userImage/userImage'
 export {default as LogInForm} from './logInContainer/logInForm/logInForm'
 export {default as SignUpForm} from './signUpContainer/siginUpForm/signUpForm'
+export {default as NewPostInput} from './feedDisplay/newPostInput/newPostInput'
+export {default as Post} from './feedDisplay/post/post'
 
 export {default as NavStateMenu} from './navState/navState'
 export {default as Menu} from './menu/menu'
