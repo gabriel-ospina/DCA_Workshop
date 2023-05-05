@@ -16,7 +16,7 @@ class AppContainer extends HTMLElement {
     }
 
     render() {
-        alert(appState.screen)
+        if(this.shadowRoot) this.shadowRoot.innerHTML=``;
         switch (appState.screen) {
             case Screens.MAIN:
               const main = this.ownerDocument.createElement("app-main");
