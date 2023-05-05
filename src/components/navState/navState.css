@@ -1,0 +1,16 @@
+.nav-state{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+    height: 3.2vw;
+    border-bottom: 1px solid #D1D1D1;
+}
+
+button{
+    width: 80px;
+    height: 36px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}

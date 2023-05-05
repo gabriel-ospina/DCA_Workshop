@@ -10,6 +10,7 @@ export {default as userImage} from './mainCard/userCard/userImage/userImage'
 export {default as LogInForm} from './logInContainer/logInForm/logInForm'
 export {default as SignUpForm} from './signUpContainer/siginUpForm/signUpForm'
 
+export {default as NavStateMenu} from './navState/navState'
 export {default as Menu} from './menu/menu'
 export {default as mainCard} from './mainCard/mainCard'
 export {default as Header} from './header/header'

@@ -1,4 +1,5 @@
 import '../components/export'
+import { mainCard } from '../components/export';
 
 import { HeaderAtt } from '../components/header/header';
 import { mainCardAttributes } from '../components/mainCard/mainCard';
@@ -63,32 +64,44 @@ class Main extends HTMLElement{
                             matchesCardSection?.appendChild(newMatches)
                             newMatchSection?.appendChild(matchesCardSection)
                         });
-                    
-                    SideSection.appendChild(newMatchSection)
+                        
+                        SideSection.appendChild(newMatchSection)
+                        
+                        lowContainer.appendChild(SideSection)
+                
 
-            lowContainer.appendChild(SideSection)
+                
+                const rSideSection = this.ownerDocument.createElement("section")
+                        rSideSection.setAttribute("class", "r-side-section")
 
-                dataMainCard.forEach((tagA) => {
-                    const maincard = this.ownerDocument.createElement("app-maincard")
-                    maincard.setAttribute(mainCardAttributes.tag1, tagA.inter.tag1)
-                    maincard.setAttribute(mainCardAttributes.tag2, tagA.inter.tag2)
-                    maincard.setAttribute(mainCardAttributes.tag3, tagA.inter.tag3)
-                    maincard.setAttribute(mainCardAttributes.tag4, tagA.inter.tag4)
-                    maincard.setAttribute(mainCardAttributes.tag5, tagA.inter.tag5)
-                    maincard.setAttribute(mainCardAttributes.thumbnail1, tagA.music.thumbnail1)
-                    maincard.setAttribute(mainCardAttributes.mtitle1, tagA.music.artist1)
-                    maincard.setAttribute(mainCardAttributes.thumbnail2, tagA.music.thumbnail2)
-                    maincard.setAttribute(mainCardAttributes.mtitle2, tagA.music.artist2)
-                    maincard.setAttribute(mainCardAttributes.thumbnail3, tagA.music.thumbnail3)
-                    maincard.setAttribute(mainCardAttributes.mtitle3, tagA.music.artist3)
-                    maincard.setAttribute(mainCardAttributes.name, tagA.user.name)
-                    maincard.setAttribute(mainCardAttributes.age, tagA.user.age)
-                    maincard.setAttribute(mainCardAttributes.gender, tagA.user.gender)
-                    maincard.setAttribute(mainCardAttributes.udistance, tagA.user.udistance)
-                    maincard.setAttribute(mainCardAttributes.image, tagA.user.image)
-                    lowContainer?.appendChild(maincard)
+                    const NavStateMenu = this.ownerDocument.createElement("app-statemenu")
+                        NavStateMenu.setAttribute("class","state-menu")
+                        rSideSection.appendChild(NavStateMenu)
+                        
+                            
+                    dataMainCard.forEach((tagA) => {
+                        const maincard = this.ownerDocument.createElement("app-maincard")
+                        maincard.setAttribute(mainCardAttributes.tag1, tagA.inter.tag1)
+                        maincard.setAttribute(mainCardAttributes.tag2, tagA.inter.tag2)
+                        maincard.setAttribute(mainCardAttributes.tag3, tagA.inter.tag3)
+                        maincard.setAttribute(mainCardAttributes.tag4, tagA.inter.tag4)
+                        maincard.setAttribute(mainCardAttributes.tag5, tagA.inter.tag5)
+                        maincard.setAttribute(mainCardAttributes.thumbnail1, tagA.music.thumbnail1)
+                        maincard.setAttribute(mainCardAttributes.mtitle1, tagA.music.artist1)
+                        maincard.setAttribute(mainCardAttributes.thumbnail2, tagA.music.thumbnail2)
+                        maincard.setAttribute(mainCardAttributes.mtitle2, tagA.music.artist2)
+                        maincard.setAttribute(mainCardAttributes.thumbnail3, tagA.music.thumbnail3)
+                        maincard.setAttribute(mainCardAttributes.mtitle3, tagA.music.artist3)
+                        maincard.setAttribute(mainCardAttributes.name, tagA.user.name)
+                        maincard.setAttribute(mainCardAttributes.age, tagA.user.age)
+                        maincard.setAttribute(mainCardAttributes.gender, tagA.user.gender)
+                        maincard.setAttribute(mainCardAttributes.udistance, tagA.user.udistance)
+                        maincard.setAttribute(mainCardAttributes.image, tagA.user.image)
+                        rSideSection.appendChild(maincard)
                     });
-        mainScreen.appendChild(lowContainer);
+
+                    lowContainer?.appendChild(rSideSection)
+                    mainScreen.appendChild(lowContainer);
 
     this.shadowRoot?.appendChild(mainScreen);
         // musicData.forEach((musicC) => {

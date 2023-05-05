@@ -17,3 +17,11 @@
 .lowContainer{
     display: flex;
 }
+
+.r-side-section{
+    width: 70%;
+}
+
+.state-menu{
+    display: flex;
+}
