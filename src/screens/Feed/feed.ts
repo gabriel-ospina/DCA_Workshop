@@ -9,7 +9,7 @@ import { PostAtt } from '../../components/feedDisplay/post/post';
 import { dataNewMatches } from '../../service/data/dataNewMatches';
 import { dataPosts } from '../../service/data/dataPosts';
 
-class Feed extends HTMLElement{
+export default class Feed extends HTMLElement{
 
     constructor(){
         super();
@@ -23,7 +23,7 @@ class Feed extends HTMLElement{
     render(){
         if(this.shadowRoot)
         this.shadowRoot.innerHTML = `
-        <link rel="stylesheet" href="../src/screens/main.css">
+        <link rel="stylesheet" href="../src/screens/Feed/feed.css">
         `;
 
         const feedScreen = this.ownerDocument.createElement("div");
@@ -77,24 +77,29 @@ class Feed extends HTMLElement{
                     const NavStateMenu = this.ownerDocument.createElement("app-statemenu")
                         NavStateMenu.setAttribute("class","state-menu")
                     rSideSection.appendChild(NavStateMenu)
-                        
-                    const newPostSection = this.ownerDocument.createElement("post-input");
-                        newPostSection.setAttribute(NewPostInputAtt.userimg, "https://cdn.discordapp.com/attachments/1010976865424506900/1088783125137604648/image.png");
-                    rSideSection.appendChild(newPostSection);
 
-                    dataPosts.forEach((posts) => {
-                        const postCard = this.ownerDocument.createElement("post-card")
-                        postCard.setAttribute(PostAtt.name, posts.name)
-                        postCard.setAttribute(PostAtt.profimg, posts.img)
-                        postCard.setAttribute(PostAtt.text, posts.text)
-                        rSideSection?.appendChild(postCard)
-                    })
+                    const postsDiv = this.ownerDocument.createElement("div")
+                        NavStateMenu.setAttribute("class","state-menu")
+                    
+                        
+                        const newPostSection = this.ownerDocument.createElement("post-input");
+                            newPostSection.setAttribute(NewPostInputAtt.userimg, "https://cdn.discordapp.com/attachments/1010976865424506900/1088783125137604648/image.png");
+                        postsDiv.appendChild(newPostSection);
+
+                        dataPosts.forEach((posts) => {
+                            const postCard = this.ownerDocument.createElement("post-card")
+                            postCard.setAttribute(PostAtt.name, posts.name)
+                            postCard.setAttribute(PostAtt.profimg, posts.img)
+                            postCard.setAttribute(PostAtt.text, posts.text)
+                            postsDiv?.appendChild(postCard)
+                        })
+                    rSideSection.appendChild(postsDiv)
                             
 
 
 
                 lowContainer?.appendChild(rSideSection)
-        feedScreen.appendChild(lowContainer);
+        feedScreen?.appendChild(lowContainer);
 
     this.shadowRoot?.appendChild(feedScreen);
         // musicData.forEach((musicC) => {
@@ -106,4 +111,4 @@ class Feed extends HTMLElement{
     }
 }
 
-customElements.define("app-main", Feed)
+customElements.define("app-feed", Feed)
