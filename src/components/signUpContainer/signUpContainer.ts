@@ -28,6 +28,7 @@ export default class SignUpContainer extends HTMLElement {
             `;
 
             const signupContainer = this.ownerDocument.createElement("section");
+            signupContainer.setAttribute("class","signup-card")
 
                 const title = this.ownerDocument.createElement("h1");
                 title.innerText = "Sign Up";
