@@ -1,10 +1,13 @@
-import { AppState } from "../types/store";
+import { Actions, AppState, Observer } from "../types/store";
 import storage, { PersistanceKeys } from "../utils/storage"
+import { reducer } from "./reducers";
 
 const emptyState: AppState = {
+    
+    screen: "Login",
+    
     header: {
         img: "",
-        logo: "",
     },
 
     user: {
@@ -46,12 +49,24 @@ const emptyState: AppState = {
         img: "",
     },
 
-    screen: "main"
+    posts: []
 
 };
 
 export let appState = storage.get<AppState>({key: PersistanceKeys.STORE, defaultValue: emptyState});
 
-let observers = [];
+// Store
 
-const notifyObservers = () = observers.forEach((obs) => obs.render());
+let observers: Observer[] = [];
+
+const notifyObservers = () => observers.forEach((obs) => obs.render());
+
+//Lanzar acciones
+
+export const dispatch = (action: Actions) => {
+    const clone = JSON.parse(JSON.stringify(appState));
+    const newState = reducer(action,clone);
+    appState = newState;
+
+    notifyObservers();
+};
