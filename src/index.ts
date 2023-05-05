@@ -27,6 +27,16 @@ class AppContainer extends HTMLElement {
               const login = this.ownerDocument.createElement("app-login");
               this.shadowRoot?.appendChild(login);
               break;
+            
+            case Screens.SIGNUP:
+              const signup = this.ownerDocument.createElement("app-signup");
+              this.shadowRoot?.appendChild(signup);
+              break;
+      
+            case Screens.FEED:
+              const feed = this.ownerDocument.createElement("app-feed");
+              this.shadowRoot?.appendChild(feed);
+              break;
       
             default:
               break;
