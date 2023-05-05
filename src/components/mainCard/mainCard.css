@@ -1,4 +1,7 @@
 .mainCardSection{
     display: flex;
     flex-direction: row;
+    height: 75%;
+    justify-content: center;
+    align-items: center;
 }

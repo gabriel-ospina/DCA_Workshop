@@ -1,3 +1,7 @@
+.main-screen{
+    overflow-y: hidden;
+}
+
 .matchesCardSection{
     width: 100%;
     display: flex;
