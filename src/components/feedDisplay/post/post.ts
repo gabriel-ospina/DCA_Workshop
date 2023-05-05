@@ -51,4 +51,4 @@ export default class Post extends HTMLElement {
     }
 }
 
-customElements.define("post", Post)
+customElements.define("post-card", Post)
