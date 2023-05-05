@@ -56,7 +56,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \*********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ LogInContainer)\n/* harmony export */ });\nclass LogInContainer extends HTMLElement {\n    constructor() {\n        super();\n        this.attachShadow({ mode: \"open\" });\n    }\n    ;\n    connectedCallback() {\n        this.render();\n    }\n    ;\n    render() {\n        if (this.shadowRoot) {\n            this.shadowRoot.innerHTML = ``;\n            const loginContainer = this.ownerDocument.createElement(\"section\");\n            const title = this.ownerDocument.createElement(\"h1\");\n            title.innerText = \"Log In\";\n            loginContainer.appendChild(title);\n            const loginForm = this.ownerDocument.createElement(\"login-form\");\n            loginContainer.appendChild(loginForm);\n            const loginBtn = this.ownerDocument.createElement(\"button\");\n            loginBtn.innerText = \"login\";\n            loginBtn.addEventListener(\"click\");\n            loginContainer.appendChild(loginBtn);\n            this.shadowRoot.appendChild(loginContainer);\n        }\n        ;\n    }\n}\ncustomElements.define(\"login-container\", LogInContainer);\n\n\n//# sourceURL=webpack://dca_scoffolding/./src/components/logInContainer/logInContainer.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ LogInContainer)\n/* harmony export */ });\n/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../store */ \"./src/store/index.ts\");\n/* harmony import */ var _store_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../store/actions */ \"./src/store/actions.ts\");\n/* harmony import */ var _types_navigation__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../types/navigation */ \"./src/types/navigation.ts\");\n\n\n\nclass LogInContainer extends HTMLElement {\n    constructor() {\n        super();\n        this.attachShadow({ mode: \"open\" });\n    }\n    ;\n    connectedCallback() {\n        this.render();\n    }\n    ;\n    navtoMain() {\n        (0,_store__WEBPACK_IMPORTED_MODULE_0__.dispatch)((0,_store_actions__WEBPACK_IMPORTED_MODULE_1__.navigate)(_types_navigation__WEBPACK_IMPORTED_MODULE_2__.Screens.MAIN));\n    }\n    ;\n    navtoSignUp() {\n        (0,_store__WEBPACK_IMPORTED_MODULE_0__.dispatch)((0,_store_actions__WEBPACK_IMPORTED_MODULE_1__.navigate)(_types_navigation__WEBPACK_IMPORTED_MODULE_2__.Screens.SIGNUP));\n    }\n    ;\n    render() {\n        if (this.shadowRoot) {\n            this.shadowRoot.innerHTML = ``;\n            const loginContainer = this.ownerDocument.createElement(\"section\");\n            const title = this.ownerDocument.createElement(\"h1\");\n            title.innerText = \"Log In\";\n            loginContainer.appendChild(title);\n            const loginForm = this.ownerDocument.createElement(\"login-form\");\n            loginContainer.appendChild(loginForm);\n            const loginBtn = this.ownerDocument.createElement(\"button\");\n            loginBtn.innerText = \"login\";\n            loginBtn.addEventListener(\"click\", this.navtoMain);\n            loginContainer.appendChild(loginBtn);\n            const signUpLink = this.ownerDocument.createElement(\"p\");\n            signUpLink.innerText = \"or Sign Up\";\n            signUpLink.addEventListener(\"click\", this.navtoSignUp);\n            loginContainer.appendChild(signUpLink);\n            this.shadowRoot.appendChild(loginContainer);\n        }\n        ;\n    }\n}\ncustomElements.define(\"login-container\", LogInContainer);\n\n\n//# sourceURL=webpack://dca_scoffolding/./src/components/logInContainer/logInContainer.ts?");
 
 /***/ }),
 
@@ -196,7 +196,27 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components_export__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/export */ \"./src/components/export.ts\");\n/* harmony import */ var _screens_main__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./screens/main */ \"./src/screens/main.ts\");\n\n\nclass AppContainer extends HTMLElement {\n    constructor() {\n        super();\n        this.attachShadow({ mode: \"open\" });\n    }\n    connectedCallback() {\n        this.render();\n    }\n    render() {\n        var _a;\n        const something = this.ownerDocument.createElement('app-main');\n        (_a = this.shadowRoot) === null || _a === void 0 ? void 0 : _a.appendChild(something);\n    }\n}\ncustomElements.define('app-container', AppContainer);\n\n\n//# sourceURL=webpack://dca_scoffolding/./src/index.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components_export__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/export */ \"./src/components/export.ts\");\n/* harmony import */ var _screens_exports__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./screens/exports */ \"./src/screens/exports.ts\");\n/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./store */ \"./src/store/index.ts\");\n/* harmony import */ var _types_navigation__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./types/navigation */ \"./src/types/navigation.ts\");\n\n\n\n\nclass AppContainer extends HTMLElement {\n    constructor() {\n        super();\n        this.attachShadow({ mode: \"open\" });\n        (0,_store__WEBPACK_IMPORTED_MODULE_2__.addObserver)(this);\n    }\n    connectedCallback() {\n        this.render();\n    }\n    render() {\n        var _a, _b;\n        alert(_store__WEBPACK_IMPORTED_MODULE_2__.appState.screen);\n        switch (_store__WEBPACK_IMPORTED_MODULE_2__.appState.screen) {\n            case _types_navigation__WEBPACK_IMPORTED_MODULE_3__.Screens.MAIN:\n                const main = this.ownerDocument.createElement(\"app-main\");\n                (_a = this.shadowRoot) === null || _a === void 0 ? void 0 : _a.appendChild(main);\n                break;\n            case _types_navigation__WEBPACK_IMPORTED_MODULE_3__.Screens.LOGIN:\n                const login = this.ownerDocument.createElement(\"app-login\");\n                (_b = this.shadowRoot) === null || _b === void 0 ? void 0 : _b.appendChild(login);\n                break;\n            default:\n                break;\n        }\n    }\n}\ncustomElements.define('app-container', AppContainer);\n\n\n//# sourceURL=webpack://dca_scoffolding/./src/index.ts?");
+
+/***/ }),
+
+/***/ "./src/screens/exports.ts":
+/*!********************************!*\
+  !*** ./src/screens/exports.ts ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"LogIn\": () => (/* reexport safe */ _logIn__WEBPACK_IMPORTED_MODULE_0__[\"default\"]),\n/* harmony export */   \"Main\": () => (/* reexport safe */ _main__WEBPACK_IMPORTED_MODULE_1__[\"default\"])\n/* harmony export */ });\n/* harmony import */ var _logIn__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./logIn */ \"./src/screens/logIn.ts\");\n/* harmony import */ var _main__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./main */ \"./src/screens/main.ts\");\n\n\n\n\n//# sourceURL=webpack://dca_scoffolding/./src/screens/exports.ts?");
+
+/***/ }),
+
+/***/ "./src/screens/logIn.ts":
+/*!******************************!*\
+  !*** ./src/screens/logIn.ts ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ LogIn)\n/* harmony export */ });\n/* harmony import */ var _components_export__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/export */ \"./src/components/export.ts\");\n\nclass LogIn extends HTMLElement {\n    constructor() {\n        super();\n        this.attachShadow({ mode: \"open\" });\n    }\n    connectedCallback() {\n        this.render();\n    }\n    render() {\n        var _a;\n        if (this.shadowRoot)\n            this.shadowRoot.innerHTML = ``;\n        const LogInScreen = this.ownerDocument.createElement(\"div\");\n        const loginDiv = this.ownerDocument.createElement(\"login-container\");\n        LogInScreen.appendChild(loginDiv);\n        (_a = this.shadowRoot) === null || _a === void 0 ? void 0 : _a.appendChild(LogInScreen);\n    }\n}\ncustomElements.define(\"app-login\", LogIn);\n\n\n//# sourceURL=webpack://dca_scoffolding/./src/screens/logIn.ts?");
 
 /***/ }),
 
@@ -227,6 +247,66 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"dataNewMatches\": () => (/* binding */ dataNewMatches)\n/* harmony export */ });\nconst dataNewMatches = [\n    {\n        img: \"https://cdn.discordapp.com/attachments/1010976865424506900/1088684164519317636/image.png\",\n        name: \"Laura\",\n        age: 21,\n    },\n    {\n        img: \"https://cdn.discordapp.com/attachments/1010976865424506900/1088685837685895258/image.png\",\n        name: \"Carlos\",\n        age: 24,\n    },\n    {\n        img: \"https://cdn.discordapp.com/attachments/1010976865424506900/1088685838075957308/image.png\",\n        name: \"Christian\",\n        age: 29,\n    },\n    {\n        img: \"https://cdn.discordapp.com/attachments/1010976865424506900/1088685838319243325/image.png\",\n        name: \"Jenifer\",\n        age: 24,\n    },\n    {\n        img: \"https://cdn.discordapp.com/attachments/1010976865424506900/1088685838570893342/image.png\",\n        name: \"Olivia\",\n        age: 22,\n    },\n    {\n        img: \"https://cdn.discordapp.com/attachments/1010976865424506900/1088685838952566854/image.png\",\n        name: \"Nathalia\",\n        age: 24,\n    },\n];\n\n\n//# sourceURL=webpack://dca_scoffolding/./src/service/data/dataNewMatches.ts?");
+
+/***/ }),
+
+/***/ "./src/store/actions.ts":
+/*!******************************!*\
+  !*** ./src/store/actions.ts ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"addNewPost\": () => (/* binding */ addNewPost),\n/* harmony export */   \"login\": () => (/* binding */ login),\n/* harmony export */   \"logout\": () => (/* binding */ logout),\n/* harmony export */   \"navigate\": () => (/* binding */ navigate)\n/* harmony export */ });\n/* harmony import */ var _types_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../types/store */ \"./src/types/store.ts\");\n\nconst logout = () => {\n    return {\n        action: _types_store__WEBPACK_IMPORTED_MODULE_0__.AuthActions.LOGOUT,\n        payload: undefined\n    };\n};\nconst login = ({ payload }) => {\n    return {\n        action: _types_store__WEBPACK_IMPORTED_MODULE_0__.AuthActions.LOGIN,\n        payload: payload\n    };\n};\n// export const getPosts = async (): Promise<GetPostAction> => {\n//     const posts = await PostService.get();\n//     return {\n//         action: PostActions.GET,\n//         payload: posts\n//     }\n// };\nconst addNewPost = ({ payload }) => {\n    return {\n        action: _types_store__WEBPACK_IMPORTED_MODULE_0__.PostActions.ADD,\n        payload: payload\n    };\n};\nconst navigate = (screen) => {\n    return {\n        type: \"NAVIGATE\",\n        payload: screen\n    };\n};\n\n\n//# sourceURL=webpack://dca_scoffolding/./src/store/actions.ts?");
+
+/***/ }),
+
+/***/ "./src/store/index.ts":
+/*!****************************!*\
+  !*** ./src/store/index.ts ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"addObserver\": () => (/* binding */ addObserver),\n/* harmony export */   \"appState\": () => (/* binding */ appState),\n/* harmony export */   \"dispatch\": () => (/* binding */ dispatch)\n/* harmony export */ });\n/* harmony import */ var _types_navigation__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../types/navigation */ \"./src/types/navigation.ts\");\n/* harmony import */ var _utils_storage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/storage */ \"./src/utils/storage.ts\");\n/* harmony import */ var _navreducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./navreducer */ \"./src/store/navreducer.ts\");\n\n\n\nconst emptyState = {\n    screen: _types_navigation__WEBPACK_IMPORTED_MODULE_0__.Screens.LOGIN,\n    header: {\n        img: \"\",\n    },\n    user: {\n        email: \"\",\n        image: \"\",\n        username: \"\",\n        age: 0,\n        gender: \"\",\n        udistance: \"\",\n        description: \"\",\n        interests: {\n            tag1: \"\",\n            tag2: \"\",\n            tag3: \"\",\n            tag4: \"\",\n            tag5: \"\",\n        },\n        music: {\n            artist1: {\n                thumbnail: \"\",\n                name: \"\",\n            },\n            artist2: {\n                thumbnail: \"\",\n                name: \"\",\n            },\n            artist3: {\n                thumbnail: \"\",\n                name: \"\",\n            }\n        }\n    },\n    feed: {\n        message: \"\",\n        img: \"\",\n    },\n    posts: []\n};\nlet appState = _utils_storage__WEBPACK_IMPORTED_MODULE_1__[\"default\"].get({ key: _utils_storage__WEBPACK_IMPORTED_MODULE_1__.PersistanceKeys.STORE, defaultValue: emptyState });\n// Store\nlet observers = [];\nconst notifyObservers = () => observers.forEach((obs) => obs.render());\n//Lanzar acciones\nconst dispatch = (action) => {\n    const clone = JSON.parse(JSON.stringify(appState));\n    const newState = (0,_navreducer__WEBPACK_IMPORTED_MODULE_2__.navReducer)(action, clone);\n    appState = newState;\n    notifyObservers();\n};\nconst addObserver = (ref) => {\n    observers = [...observers, ref];\n};\n\n\n//# sourceURL=webpack://dca_scoffolding/./src/store/index.ts?");
+
+/***/ }),
+
+/***/ "./src/store/navreducer.ts":
+/*!*********************************!*\
+  !*** ./src/store/navreducer.ts ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"navReducer\": () => (/* binding */ navReducer)\n/* harmony export */ });\nconst navReducer = (action, prevState) => {\n    switch (action.type) {\n        case \"NAVIGATE\":\n            prevState.screen = action.payload;\n    }\n    return prevState;\n};\n\n\n//# sourceURL=webpack://dca_scoffolding/./src/store/navreducer.ts?");
+
+/***/ }),
+
+/***/ "./src/types/navigation.ts":
+/*!*********************************!*\
+  !*** ./src/types/navigation.ts ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"Screens\": () => (/* binding */ Screens)\n/* harmony export */ });\nvar Screens;\n(function (Screens) {\n    Screens[\"LOGIN\"] = \"LOGIN\";\n    Screens[\"SIGNUP\"] = \"SIGNUP\";\n    Screens[\"MAIN\"] = \"MAIN\";\n    Screens[\"FEED\"] = \"FEED\";\n})(Screens || (Screens = {}));\n\n\n//# sourceURL=webpack://dca_scoffolding/./src/types/navigation.ts?");
+
+/***/ }),
+
+/***/ "./src/types/store.ts":
+/*!****************************!*\
+  !*** ./src/types/store.ts ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"AuthActions\": () => (/* binding */ AuthActions),\n/* harmony export */   \"PostActions\": () => (/* binding */ PostActions)\n/* harmony export */ });\nvar AuthActions;\n(function (AuthActions) {\n    AuthActions[\"LOGIN\"] = \"LOGIN\";\n    AuthActions[\"LOGOUT\"] = \"LOGOUT\";\n    AuthActions[\"SIGNUP\"] = \"SIGNUP\";\n})(AuthActions || (AuthActions = {}));\nvar PostActions;\n(function (PostActions) {\n    PostActions[\"ADD\"] = \"ADD\";\n    PostActions[\"GET\"] = \"GET\";\n})(PostActions || (PostActions = {}));\n;\n;\n;\n;\n\n\n//# sourceURL=webpack://dca_scoffolding/./src/types/store.ts?");
+
+/***/ }),
+
+/***/ "./src/utils/storage.ts":
+/*!******************************!*\
+  !*** ./src/utils/storage.ts ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"PersistanceKeys\": () => (/* binding */ PersistanceKeys),\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar PersistanceKeys;\n(function (PersistanceKeys) {\n    PersistanceKeys[\"STORE\"] = \"STORE\";\n})(PersistanceKeys || (PersistanceKeys = {}));\n;\nconst get = ({ key, defaultValue }) => {\n    const value = localStorage.getItem(key) || sessionStorage.getItem(key);\n    return value ? JSON.parse(value) : defaultValue;\n};\nconst set = ({ key, value, session = false }) => {\n    const storage = session ? sessionStorage : localStorage;\n    const parsed = JSON.stringify(value);\n    storage.setItem(key, parsed);\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n    get,\n    set,\n});\n\n\n//# sourceURL=webpack://dca_scoffolding/./src/utils/storage.ts?");
 
 /***/ })
 

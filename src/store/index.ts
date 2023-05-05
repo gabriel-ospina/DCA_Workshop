@@ -2,6 +2,7 @@ import { Screens } from "../types/navigation";
 import { Actions, AppState, Observer } from "../types/store";
 import storage, { PersistanceKeys } from "../utils/storage"
 import { reducer } from "./reducers";
+import { navReducer } from "./navreducer";
 
 const emptyState: AppState = {
     
@@ -66,7 +67,7 @@ const notifyObservers = () => observers.forEach((obs) => obs.render());
 
 export const dispatch = (action: any) => {
     const clone = JSON.parse(JSON.stringify(appState));
-    const newState = reducer(action,clone);
+    const newState = navReducer(action,clone);
     appState = newState;
 
     notifyObservers();

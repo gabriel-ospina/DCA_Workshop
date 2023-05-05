@@ -1,3 +1,6 @@
+import { dispatch } from "../../store";
+import { navigate } from "../../store/actions";
+import { Screens } from "../../types/navigation";
 
 export default class LogInContainer extends HTMLElement {
     constructor(){
@@ -7,6 +10,14 @@ export default class LogInContainer extends HTMLElement {
 
     connectedCallback(){
         this.render();
+    };
+
+    navtoMain() {
+        dispatch(navigate(Screens.MAIN));
+    };
+   
+    navtoSignUp() {
+        dispatch(navigate(Screens.SIGNUP));
     };
 
     render(){
@@ -25,8 +36,13 @@ export default class LogInContainer extends HTMLElement {
 
                 const loginBtn = this.ownerDocument.createElement("button");
                 loginBtn.innerText = "login";
-                loginBtn.addEventListener("click", );
+                loginBtn.addEventListener("click", this.navtoMain);
                 loginContainer.appendChild(loginBtn)
+
+                const signUpLink = this.ownerDocument.createElement("p");
+                signUpLink.innerText="or Sign Up";
+                signUpLink.addEventListener("click", this.navtoSignUp)
+                loginContainer.appendChild(signUpLink);
 
             this.shadowRoot.appendChild(loginContainer);
         };

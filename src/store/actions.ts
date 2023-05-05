@@ -31,6 +31,8 @@ export const addNewPost = ({payload}: Pick<AddPostAction, "payload">): AddPostAc
 };
 
 export const navigate = (screen: Screens) => {
-    return {type: "NAVIGATE",
-    payload: screen}
+    return {
+        type: "NAVIGATE",
+        payload: screen
+    }
 };

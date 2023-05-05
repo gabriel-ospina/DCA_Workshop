@@ -2,7 +2,7 @@ import '../components/export'
 
 
 
-class LogIn extends HTMLElement{
+export default class LogIn extends HTMLElement{
 
     constructor(){
         super();
@@ -19,15 +19,10 @@ class LogIn extends HTMLElement{
 
         const LogInScreen = this.ownerDocument.createElement("div");
 
-            const loginDiv = this.ownerDocument.createElement("login-container")
+            const loginDiv = this.ownerDocument.createElement("login-container");
+            LogInScreen.appendChild(loginDiv);
 
          this.shadowRoot?.appendChild(LogInScreen);
-        // musicData.forEach((musicC) => {
-        //     const maincard = this.ownerDocument.createElement("app-maincard")
-        //     maincard.setAttribute(mainCardAttributes.thumbnail, musicC.thumbnail)
-        //     maincard.setAttribute(mainCardAttributes.mtitle, musicC.mtitle)
-        //     this.shadowRoot?.appendChild(maincard)
-        //     })
     }
 }
 
