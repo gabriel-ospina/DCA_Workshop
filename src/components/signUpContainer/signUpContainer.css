@@ -17,3 +17,14 @@ h1{
     color: #816CAD;
 
 }
+
+signup-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0 27px rgba(129, 108, 173, 0.35);
+    justify-content: center;
+    width: 22%;
+    height: 500px;
+    border-radius: 20px;
+}
