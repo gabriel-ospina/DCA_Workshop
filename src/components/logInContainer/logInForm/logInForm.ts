@@ -11,7 +11,9 @@ export default class LogInForm extends HTMLElement {
     render(){
         if (this.shadowRoot){
 
-            this.shadowRoot.innerHTML=``;
+            this.shadowRoot.innerHTML=`
+            <link rel="stylesheet" href="../src/components/logInContainer/logInForm/logInForm.css">
+            `;
 
             const form = this.ownerDocument.createElement("form")
             

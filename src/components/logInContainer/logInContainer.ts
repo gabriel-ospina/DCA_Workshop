@@ -23,9 +23,12 @@ export default class LogInContainer extends HTMLElement {
     render(){
         if (this.shadowRoot){
 
-            this.shadowRoot.innerHTML=``;
+            this.shadowRoot.innerHTML=`
+            <link rel="stylesheet" href="../src/components/logInContainer/logInContainer.css">
+            `;
 
             const loginContainer = this.ownerDocument.createElement("section");
+            loginContainer.setAttribute("class","login-card")
 
                 const title = this.ownerDocument.createElement("h1");
                 title.innerText = "Log In";
