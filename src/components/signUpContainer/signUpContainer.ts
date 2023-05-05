@@ -23,7 +23,9 @@ export default class SignUpContainer extends HTMLElement {
     render(){
         if (this.shadowRoot){
 
-            this.shadowRoot.innerHTML=``;
+            this.shadowRoot.innerHTML=`
+            <link rel="stylesheet" href="../src/components/signUpContainer/signUpContainer.css">
+            `;
 
             const signupContainer = this.ownerDocument.createElement("section");
 

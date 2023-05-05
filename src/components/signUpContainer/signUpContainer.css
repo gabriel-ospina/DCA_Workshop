@@ -1,0 +1,19 @@
+button{
+    background-color: #816CAD;
+    border: none;
+    width: 130px;
+    height: 40px;
+    border-radius: 30px;
+    color: white;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+p{
+    cursor: pointer;
+}
+
+h1{
+    color: #816CAD;
+
+}

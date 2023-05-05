@@ -11,7 +11,9 @@ export default class SignUpForm extends HTMLElement {
     render(){
         if (this.shadowRoot){
 
-            this.shadowRoot.innerHTML=``;
+            this.shadowRoot.innerHTML=`
+            <link rel="stylesheet" href="../src/components/signUpContainer/siginUpForm/signUpForm.css">
+            `;
 
             const form = this.ownerDocument.createElement("form")
             
