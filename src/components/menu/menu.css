@@ -4,4 +4,11 @@ nav{
     align-items: center;
     justify-content: space-between;
     padding: 0px 50px;
+    height: 3.2vw;
+    border-bottom: 1px solid #D1D1D1;
+}
+
+svg{
+    height: 17px;
+    padding: 15px 0px;
 }

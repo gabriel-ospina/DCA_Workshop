@@ -37,6 +37,7 @@ export default class SafeIcon extends HTMLElement {
     render(){
         if(this.shadowRoot)
         this.shadowRoot.innerHTML=`
+        <link rel="stylesheet" href="../src/components/menu/icon.css">
         <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="${this.safeiconin}" fill="black" fill-opacity="0.36"/>
             <path fill-rule="evenodd" clip-rule="evenodd" d="${this.safeiconout}" fill="black" fill-opacity="0.36"/>

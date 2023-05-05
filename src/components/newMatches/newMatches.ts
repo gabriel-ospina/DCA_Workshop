@@ -55,8 +55,10 @@ export default class NewMatches extends HTMLElement{
 
             <div class="container" style="background-image: url(${this.img});">
                 <div class="text">
-                    <h3>${this.name}</h3>
-                    <span>${this.age}</span>
+                    <span>
+                        <h3>${this.name}</h3>
+                        <p>${this.age}</p>
+                    </span>
                 </div>
             </div>
             `;

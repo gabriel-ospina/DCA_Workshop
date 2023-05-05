@@ -1,0 +1,25 @@
+.container {
+    width: 150px;
+    height: 211px;
+    margin: 10px 10px;
+
+    background-size: cover;
+    display: flex;
+    align-items: flex-end;
+    
+    border-radius: 0.25rem;
+}
+
+p{
+    margin-left: 5px;
+    color: white;
+}
+
+h3{
+    color: white;
+}
+
+span{
+    display: flex;
+    align-items: baseline;
+}

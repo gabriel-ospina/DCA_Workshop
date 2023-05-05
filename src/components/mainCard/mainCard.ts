@@ -85,9 +85,12 @@ export default class MainCard extends HTMLElement{
 
     render(){
         if(this.shadowRoot)
-        this.shadowRoot.innerHTML = ``;
+        this.shadowRoot.innerHTML = `
+        <link rel="stylesheet" href="../src/components/mainCard/mainCard.css">
+        `;
 
         const mainCardSection = this.ownerDocument.createElement('section');
+        mainCardSection.setAttribute("class","mainCardSection")
 
         const userCard = this.ownerDocument.createElement("app-ucardsection");
             userCard.setAttribute(userCardAtt.name, this.name);

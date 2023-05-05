@@ -1,0 +1,19 @@
+.matchesCardSection{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+.newMatchSection{
+    padding: 0 50px;
+}
+
+.sideSection{
+    width: 30%;
+    border-right: solid 1px #D1D1D1;
+}
+
+.lowContainer{
+    display: flex;
+}

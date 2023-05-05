@@ -1,0 +1,4 @@
+.mainCardSection{
+    display: flex;
+    flex-direction: row;
+}

@@ -21,7 +21,9 @@ class Main extends HTMLElement{
 
     render(){
         if(this.shadowRoot)
-        this.shadowRoot.innerHTML = ``;
+        this.shadowRoot.innerHTML = `
+        <link rel="stylesheet" href="../src/screens/main.css">
+        `;
 
         const mainScreen = this.ownerDocument.createElement("div");
 
@@ -31,8 +33,10 @@ class Main extends HTMLElement{
             mainScreen?.appendChild(header);
             
             const lowContainer = this.ownerDocument.createElement("div");
+            lowContainer.setAttribute("class","lowContainer")
 
                 const SideSection = this.ownerDocument.createElement("section")
+                SideSection.setAttribute("class","sideSection")
                     const menuSection = this.ownerDocument.createElement("app-menu")
                     menuSection.setAttribute(MenuAtt.mainicon, "M11.7187 13.0625C13.1467 12.2375 14.1667 10.4844 14.1667 6.875C14.1667 0.859375 11.3333 0 8.5 0C5.66667 0 2.83333 0.859375 2.83333 6.875C2.83333 10.4844 3.85334 12.2375 5.28134 13.0625C6.23334 13.6125 7.36667 13.75 8.5 13.75C9.63333 13.75 10.7667 13.6125 11.7187 13.0625ZM4.25 15.125C1.90279 15.125 0 16.9718 0 19.25C0 20.7688 1.26853 22 2.83333 22H14.1667C15.7315 22 17 20.7688 17 19.25C17 16.9718 15.0972 15.125 12.75 15.125H4.25Z");
                     menuSection.setAttribute(MenuAtt.chaticon, "M4.32655 2.57004C3.33503 2.57004 2.53125 3.38614 2.53125 4.39285V17.8808C2.53125 18.8875 3.33503 19.7036 4.32655 19.7036H5.59217V24.0375L11.6283 19.7036H22.6735C23.665 19.7036 24.4688 18.8875 24.4688 17.8808V4.39285C24.4688 3.38614 23.665 2.57004 22.6735 2.57004H4.32655ZM0 4.39285C0 1.96675 1.93706 0 4.32655 0H22.6735C25.0629 0 27 1.96675 27 4.39285V17.8808C27 20.3069 25.0629 22.2737 22.6735 22.2737H12.3294L6.13664 26.703C4.78303 27.5276 3.06092 26.5376 3.06092 24.9348L3.06092 22.0828C1.28892 21.5332 0 19.8599 0 17.8808V4.39285Z");
@@ -42,20 +46,24 @@ class Main extends HTMLElement{
                     SideSection.appendChild(menuSection)
 
                     const newMatchSection = this.ownerDocument.createElement("section")
+                    newMatchSection.setAttribute("class","newMatchSection")
 
                     const newMatTitle = this.ownerDocument.createElement("h1");
                             const newMatText = this.ownerDocument.createTextNode("New Matches");
                             newMatTitle.appendChild(newMatText)
                         newMatchSection.appendChild(newMatTitle)
 
+                    const matchesCardSection = this.ownerDocument.createElement("section")
+                    matchesCardSection.setAttribute("class","matchesCardSection")
                         dataNewMatches.forEach((newm) => {
                             const newMatches = this.ownerDocument.createElement("new-matches")
                             newMatches.setAttribute(NewMatchesAtt.img, newm.img);
                             newMatches.setAttribute(NewMatchesAtt.age, String(newm.age));
                             newMatches.setAttribute(NewMatchesAtt.name, newm.name);
-                            newMatchSection?.appendChild(newMatches)
+                            matchesCardSection?.appendChild(newMatches)
+                            newMatchSection?.appendChild(matchesCardSection)
                         });
-
+                    
                     SideSection.appendChild(newMatchSection)
 
             lowContainer.appendChild(SideSection)
