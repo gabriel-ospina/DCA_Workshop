@@ -1,10 +1,11 @@
+import { Screens } from "../types/navigation";
 import { Actions, AppState, Observer } from "../types/store";
 import storage, { PersistanceKeys } from "../utils/storage"
 import { reducer } from "./reducers";
 
 const emptyState: AppState = {
     
-    screen: "Login",
+    screen: Screens.LOGIN,
     
     header: {
         img: "",

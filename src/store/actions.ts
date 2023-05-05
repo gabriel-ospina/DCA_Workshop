@@ -1,3 +1,4 @@
+import { Screens } from "../types/navigation";
 import { AddPostAction, AuthActions, GetPostAction, LogInAction, LogOutAction, PostActions } from "../types/store";
 
 export const logout = ():LogOutAction => {
@@ -12,19 +13,24 @@ export const login = ({payload}: Pick<LogInAction, "payload">): LogInAction => {
         action: AuthActions.LOGIN,
         payload: payload
     }
-}
+};
 
-export const getPosts = async (): Promise<GetPostAction> => {
-    const posts = await PostService.get();
-    return {
-        action: PostActions.GET,
-        payload: posts
-    }
-}
+// export const getPosts = async (): Promise<GetPostAction> => {
+//     const posts = await PostService.get();
+//     return {
+//         action: PostActions.GET,
+//         payload: posts
+//     }
+// };
 
 export const addNewPost = ({payload}: Pick<AddPostAction, "payload">): AddPostAction => {
     return {
         action: PostActions.ADD,
         payload: payload
     }
-}
+};
+
+export const navigate = (screen: Screens) => {
+    return {type: "NAVIGATE",
+    payload: screen}
+};

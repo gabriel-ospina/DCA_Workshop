@@ -78,7 +78,6 @@ export const reducer = (currentAction: Actions, currentState: AppState): AppStat
                     ...currentState,
                     posts: payload
                 }
-            break;
     
         default:
             return currentState;
