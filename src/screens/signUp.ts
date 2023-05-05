@@ -15,7 +15,9 @@ export default class SignUp extends HTMLElement{
 
     render(){
         if(this.shadowRoot)
-        this.shadowRoot.innerHTML = ``;
+        this.shadowRoot.innerHTML = `
+        <link rel="stylesheet" href="../src/screens/signUp.css">
+        `;
 
         const SignUpScreen = this.ownerDocument.createElement("div");
 
