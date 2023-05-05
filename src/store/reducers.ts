@@ -1,3 +1,4 @@
+import { Screens } from "../types/navigation";
 import { Actions, AppState, AuthActions, PostActions } from "../types/store";
 
 export const reducer = (currentAction: Actions, currentState: AppState): AppState => {
@@ -14,6 +15,9 @@ export const reducer = (currentAction: Actions, currentState: AppState): AppStat
         case AuthActions.LOGOUT:
             return {
                 ...currentState,
+                
+                screen: Screens.LOGIN,
+
                 header: {
                     img: "",
                 },
@@ -56,8 +60,6 @@ export const reducer = (currentAction: Actions, currentState: AppState): AppStat
                     message: "",
                     img: "",
                 },
-            
-                screen: "main"
             
             }
             break;

@@ -1,8 +1,9 @@
 import { Posts } from "./Posts";
+import { Screens } from "./navigation";
 
 export type AppState = {
     
-    screen: string,
+    screen: Screens,
     
     header: {
         img: string,

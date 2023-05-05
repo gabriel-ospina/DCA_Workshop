@@ -64,10 +64,14 @@ const notifyObservers = () => observers.forEach((obs) => obs.render());
 
 //Lanzar acciones
 
-export const dispatch = (action: Actions) => {
+export const dispatch = (action: any) => {
     const clone = JSON.parse(JSON.stringify(appState));
     const newState = reducer(action,clone);
     appState = newState;
 
     notifyObservers();
 };
+
+export const addObserver = (ref: Observer) => {
+    observers = [...observers, ref];
+}
