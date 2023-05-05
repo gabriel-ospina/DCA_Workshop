@@ -33,6 +33,7 @@ export default class NewPostInput extends HTMLElement {
 
     render(){
         if (this.shadowRoot) this.shadowRoot.innerHTML=`
+        <link rel="stylesheet" href="../src/components/feedDisplay/newPostInput/newPostInput.css">
             <form>
                 <section class="upper-sec">
                     <div class="user-image" style="background-image: url('${this.userimg}');"></div>

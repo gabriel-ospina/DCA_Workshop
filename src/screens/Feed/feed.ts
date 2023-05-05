@@ -79,7 +79,7 @@ export default class Feed extends HTMLElement{
                     rSideSection.appendChild(NavStateMenu)
 
                     const postsDiv = this.ownerDocument.createElement("div")
-                        NavStateMenu.setAttribute("class","state-menu")
+                        postsDiv.setAttribute("class","post-section")
                     
                         
                         const newPostSection = this.ownerDocument.createElement("post-input");

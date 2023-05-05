@@ -41,7 +41,6 @@ export default class Post extends HTMLElement {
         if (this.shadowRoot) this.shadowRoot.innerHTML=`
             <section class="post-container">
                 <div class="user-image" style="background-image: url('${this.profimg}');"></div>
-                <input placeholder="What's up?">
                 <section class="text-sec">
                     <h3>${this.name}</h3>
                     <p>${this.text}</p>
