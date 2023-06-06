@@ -1,4 +1,6 @@
 import '../../components/export'
+import firebase from '../../service/firebase';
+import { Posts } from '../../types/Posts';
 
 import { HeaderAtt } from '../../components/header/header';
 import { MenuAtt } from '../../components/menu/menu';
@@ -51,6 +53,7 @@ export default class Feed extends HTMLElement{
 
                 const newMatTitle = this.ownerDocument.createElement("h1");
                         const newMatText = this.ownerDocument.createTextNode("New Matches");
+                        newMatTitle.setAttribute("class", "app-subtitle app-sb-sidesec")
                         newMatTitle.appendChild(newMatText)
                     newMatchSection.appendChild(newMatTitle)
 
@@ -86,13 +89,23 @@ export default class Feed extends HTMLElement{
                             newPostSection.setAttribute(NewPostInputAtt.userimg, "https://cdn.discordapp.com/attachments/1010976865424506900/1088783125137604648/image.png");
                         postsDiv.appendChild(newPostSection);
 
-                        dataPosts.forEach((posts) => {
-                            const postCard = this.ownerDocument.createElement("post-card")
-                            postCard.setAttribute(PostAtt.name, posts.name)
-                            postCard.setAttribute(PostAtt.profimg, posts.img)
-                            postCard.setAttribute(PostAtt.text, posts.text)
-                            postsDiv?.appendChild(postCard)
+                        const posts = await firebase.getPosts();
+                        posts.forEach((p: Posts) => {
+                          const postCard = this.ownerDocument.createElement("post-card")
+                          postCard.setAttribute(PostAtt.text, p.message)
+                          postsDiv.appendChild(postCard);
                         })
+                    
+                         
+                    
+
+                        // dataPosts.forEach((posts) => {
+                        //     const postCard = this.ownerDocument.createElement("post-card")
+                        //     postCard.setAttribute(PostAtt.name, posts.name)
+                        //     postCard.setAttribute(PostAtt.profimg, posts.img)
+                        //     postCard.setAttribute(PostAtt.text, posts.text)
+                        //     postsDiv?.appendChild(postCard)
+                        // })
                     rSideSection.appendChild(postsDiv)
                             
 
