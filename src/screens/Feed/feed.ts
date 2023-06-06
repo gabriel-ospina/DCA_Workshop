@@ -51,6 +51,7 @@ export default class Feed extends HTMLElement{
 
                 const newMatTitle = this.ownerDocument.createElement("h1");
                         const newMatText = this.ownerDocument.createTextNode("New Matches");
+                        newMatTitle.setAttribute("class", "app-subtitle app-sb-sidesec")
                         newMatTitle.appendChild(newMatText)
                     newMatchSection.appendChild(newMatTitle)
 
