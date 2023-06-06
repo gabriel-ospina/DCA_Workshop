@@ -4,3 +4,9 @@ app-signup{
     height: 660px;
     align-items: center;
 }
+
+@media screen and (max-width: 391px){
+    app-signup{
+        height: 854px;
+    }
+}

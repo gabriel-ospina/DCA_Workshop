@@ -4,3 +4,9 @@
     justify-content: center;
     height: 700px;
 }
+
+@media screen and (max-width: 391px){
+    .login-section{
+        height: 854px;;
+    }
+}

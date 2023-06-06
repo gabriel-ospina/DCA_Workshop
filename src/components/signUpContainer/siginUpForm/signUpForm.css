@@ -15,3 +15,14 @@ input{
 input::placeholder {
     padding-left: 10px;
 }
+
+@media screen and (max-width: 391px){
+    input{
+        width: 303px;
+        height: 54px;
+    }
+
+    input::placeholder{
+        font-size: 18px;
+    }
+}

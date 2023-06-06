@@ -8,3 +8,10 @@ div{
     height: 550px;
     border-radius: 20px;
 }
+
+@media screen and (max-width: 391px){
+    div{
+        width: fit-content;
+        box-shadow: none;
+    }
+}

@@ -15,7 +15,12 @@ p{
 
 h1{
     color: #816CAD;
+}
 
+@media screen and (max-width: 391px){
+    h1{
+    font-size: 40px;
+    }
 }
 
 signup-card{

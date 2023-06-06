@@ -9,6 +9,13 @@
     border-radius: 20px;
 }
 
+@media screen and (max-width: 391px){
+    .login-card{
+        box-shadow: none;
+        width: fit-content;
+    }
+}
+
 button{
     background-color: #816CAD;
     border: none;
@@ -24,5 +31,11 @@ p{
 }
 
 h1{
-    color: #816CAD;
+    color: #C07699;
+}
+
+@media screen and (max-width: 391px){
+    h1{
+    font-size: 40px;
+    }
 }
