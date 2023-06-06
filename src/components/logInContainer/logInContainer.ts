@@ -1,6 +1,8 @@
 import { dispatch } from "../../store";
 import { navigate } from "../../store/actions";
 import { Screens } from "../../types/navigation";
+import { credentials } from "./logInForm/logInForm";
+import Firebase from "../../service/firebase";
 
 export default class LogInContainer extends HTMLElement {
     constructor(){
@@ -12,9 +14,20 @@ export default class LogInContainer extends HTMLElement {
         this.render();
     };
 
-    navtoMain() {
-        dispatch(navigate(Screens.MAIN));
-    };
+    async  handleLoginButton() {
+        //alert(credentials.email + "=" + credentials.password);
+        //credentials.pageIni= Screens.MAIN;
+        const resp: any = await Firebase.loginUser(credentials);
+        //alert('respuesta externa');
+        //aert(resp);
+        // if (resp) {
+        //   //alert("You have logged in successfully");
+        //   dispatch(navigate(Screens.MAIN));
+        // } else {
+        //   alert("This is not a registered user");
+        // }
+        // console.log(resp);
+      };
    
     navtoSignUp() {
         dispatch(navigate(Screens.SIGNUP));
@@ -39,7 +52,7 @@ export default class LogInContainer extends HTMLElement {
 
                 const loginBtn = this.ownerDocument.createElement("button");
                 loginBtn.innerText = "login";
-                loginBtn.addEventListener("click", this.navtoMain);
+                loginBtn.addEventListener("click", this.handleLoginButton);
                 loginContainer.appendChild(loginBtn)
 
                 const signUpLink = this.ownerDocument.createElement("p");

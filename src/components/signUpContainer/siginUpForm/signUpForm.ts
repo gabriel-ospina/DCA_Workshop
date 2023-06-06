@@ -1,3 +1,7 @@
+import Firebase from "../../../service/firebase";
+
+export const newUser = { email: "", password: "" };
+
 export default class SignUpForm extends HTMLElement {
     constructor(){
         super();
@@ -35,10 +39,18 @@ export default class SignUpForm extends HTMLElement {
 
                 const email = this.ownerDocument.createElement("input");
                 email.placeholder = "E-mail";
+                email.addEventListener(
+                    "change",
+                    (e: any) => (newUser.email = e.target.value)
+                  );
                 form.appendChild(email);
 
                 const password = this.ownerDocument.createElement("input");
                 password.placeholder = "Password";
+                password.addEventListener(
+                    "change",
+                    (e: any) => (newUser.password = e.target.value)
+                  );
                 form.appendChild(password);
             
             this.shadowRoot.appendChild(form);
