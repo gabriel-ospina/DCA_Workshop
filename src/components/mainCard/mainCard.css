@@ -13,6 +13,13 @@ h3{
     align-items: center;
 }
 
+@media screen and (max-width: 391px){
+    .mainCardSection{
+        justify-content: flex-start;
+        margin: -42px 0 0 32px;
+    }
+}  
+
 .var-section{
     display: flex;
     flex-direction: row;
@@ -24,6 +31,12 @@ h3{
     display: flex;
     flex-wrap: wrap;
     margin-left: 10px;
+}
+
+@media screen and (max-width: 391px){
+    .user-detail-section{
+        visibility: hidden;
+    }
 }
 
 .u-section{

@@ -29,3 +29,9 @@ button{
     color: rgb(129, 108, 173);
     border-bottom: solid 4px rgb(129, 108, 173);
 }
+
+@media screen and (max-width: 391px){
+    nav{
+        visibility: hidden;
+    }
+}

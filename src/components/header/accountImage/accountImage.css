@@ -1,3 +1,10 @@
 img{
     height: 40px;
 }
+
+@media screen and (max-width: 391px){
+    img{
+        margin-left: 3vh;
+        height: 60px;
+    }
+}

@@ -7,3 +7,13 @@ header{
     align-items: center;
     border-bottom: 1px solid #D1D1D1;
 }
+
+@media screen and (max-width: 391px){
+    header{
+        margin: 39px 0 0 0;
+        height: auto;
+        border: none;
+        padding: 0;
+        flex-direction: row-reverse;
+    }
+}

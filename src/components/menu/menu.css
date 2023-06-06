@@ -8,6 +8,14 @@ nav{
     border-bottom: 1px solid #D1D1D1;
 }
 
+@media screen and (max-width: 391px){
+    nav{
+        padding: 0;
+        width: 92%;
+        border: none;
+    }
+}
+
 svg{
     height: 17px;
     padding: 15px 0px;
