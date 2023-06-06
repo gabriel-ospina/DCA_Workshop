@@ -15,6 +15,13 @@ export const login = ({payload}: Pick<LogInAction, "payload">): LogInAction => {
     }
 };
 
+export const setUserCredentials = (user: string) => {
+    return {
+      type: "SETUSER",
+      payload: user,
+    };
+  };
+
 // export const getPosts = async (): Promise<GetPostAction> => {
 //     const posts = await PostService.get();
 //     return {

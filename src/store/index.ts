@@ -3,6 +3,18 @@ import { Actions, AppState, Observer } from "../types/store";
 import storage, { PersistanceKeys } from "../utils/storage"
 import { reducer } from "./reducers";
 import { navReducer } from "./navreducer";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "../service/firebase";
+import { navigate, setUserCredentials } from "./actions";
+
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    user.email !== null ? dispatch(setUserCredentials(user.email)) : '';
+    dispatch(navigate(Screens.MAIN));
+  } else {
+    dispatch(navigate(Screens.LOGIN));
+  }
+});
 
 const emptyState: AppState = {
     

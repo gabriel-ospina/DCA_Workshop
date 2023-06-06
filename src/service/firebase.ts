@@ -74,18 +74,18 @@ const registerUser = async ({
   };
   
 
-export const addProduct = async (product: Omit<Posts, "id">) => {
+export const addPost = async (product: Omit<Posts, "id">) => {
     try {
-        const where = collection(db, "products");
+        const where = collection(db, "posts");
         await addDoc(where, product);
-        console.log("Se añadio un nuevo producto");
+        console.log("Se añadio un nuevo post");
     } catch (error) {
         console.error(error);
     }
 };
 
-export const getProducts = async () => {
-    const querySnapshot = await getDocs(collection(db, "products"));
+export const getPosts = async () => {
+    const querySnapshot = await getDocs(collection(db, "posts"));
     const transformed: Array<Posts> = [];
 
     querySnapshot.forEach((doc) => {
@@ -96,8 +96,8 @@ export const getProducts = async () => {
 }
 
 export default {
-    addProduct,
-    getProducts,
+    addPost,
+    getPosts,
     registerUser,
     loginUser
 };
