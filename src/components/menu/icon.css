@@ -2,3 +2,15 @@ svg{
     height: 17px;
     padding: 15px 0px;
 }
+
+span{
+    color: rgb(129, 108, 173);
+    padding: 16px 0 15px 5px;
+}
+
+.main-selec{
+    width: 90px;
+    display: flex;
+    justify-content: center;
+    border-bottom: solid 4px rgb(129, 108, 173);
+}

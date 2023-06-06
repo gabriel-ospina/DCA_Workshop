@@ -6,7 +6,7 @@ import { navReducer } from "./navreducer";
 
 const emptyState: AppState = {
     
-    screen: Screens.LOGIN,
+    screen: Screens.MAIN,
     
     header: {
         img: "",
