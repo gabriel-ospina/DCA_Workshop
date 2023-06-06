@@ -34,6 +34,12 @@ p{
     align-self: center;
 }
 
+@media screen and (max-width: 391px){
+    .post-container{
+        width: 80%;
+    }
+}
+
 .u-section{
     display: flex;
     align-items: baseline;

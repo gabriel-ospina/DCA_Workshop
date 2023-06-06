@@ -10,9 +10,12 @@ nav{
 
 @media screen and (max-width: 391px){
     nav{
-        padding: 0;
-        width: 92%;
-        border: none;
+    position: absolute;
+    top: 88%;
+    padding: 20px 0 30px;
+    width: 100%;
+    border: none;
+    background-color: white;
     }
 }
 
