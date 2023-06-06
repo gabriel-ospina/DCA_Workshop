@@ -1,0 +1,46 @@
+h3{
+    color: #816CAD;
+    margin-top: 10px;
+}
+
+p{
+    color: #463B5D;
+    margin: -16px 0 16px 60px;
+}
+
+.post-date{
+    margin: 0 0 0 5px;
+    color: rgba(129, 108, 173, 0.6);
+}
+
+.user-image{
+    width: 50px;
+    height: 50px;
+    margin: 0 10px 0 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 27px;
+}
+
+.post-container{
+    width: 60%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    padding: 15px 20px 20px 20px;
+    border-radius: 13px;
+    box-shadow: 0px 0px 14px 0px rgba(129, 108, 173, 0.25);
+    align-self: center;
+}
+
+.u-section{
+    display: flex;
+    align-items: baseline;
+}
+
+.user-post-section{
+    display: flex;
+    flex-direction: row;
+    align-items: center
+}

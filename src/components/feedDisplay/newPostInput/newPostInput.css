@@ -6,19 +6,44 @@ input{
     background-color: transparent;
 }
 
+form{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
 input::placeholder{
     font-size: 20px;
 }
 
 .upper-sec{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    padding: 0 20px;
     background-color: #FEF4F9;
     border-radius: 13px;
-    width: 70%;
+    width: 60%;
     height: 136px;
+    box-shadow: 0px 0px 14px 0px rgba(129, 108, 173, 0.25);
+}
+
+.user-image{
+    width: 50px;
+    height: 50px;
+    margin: 0 10px 0 0;
+    background-size: contain;
+}
+
+.input-section{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
 }
 
 button{
-    background-color: #816CAD;
+    align-self: flex-end;
+    background-color: rgba(129, 108, 173, 0.5);
     border: none;
     width: 130px;
     height: 40px;

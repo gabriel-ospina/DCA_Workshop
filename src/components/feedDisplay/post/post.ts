@@ -39,10 +39,16 @@ export default class Post extends HTMLElement {
 
     render(){
         if (this.shadowRoot) this.shadowRoot.innerHTML=`
+        <link rel="stylesheet" href="../src/components/feedDisplay/post/post.css">
             <section class="post-container">
-                <div class="user-image" style="background-image: url('${this.profimg}');"></div>
+                <div class="user-post-section">
+                    <div class="user-image" style="background-image: url('${this.profimg}');"></div>
+                    <span class="u-section">
+                        <h3>${this.name}</h3>
+                        <p class="post-date">• Just now</p>
+                    </span>
+                </div>
                 <section class="text-sec">
-                    <h3>${this.name}</h3>
                     <p>${this.text}</p>
                 <section>
             </section>

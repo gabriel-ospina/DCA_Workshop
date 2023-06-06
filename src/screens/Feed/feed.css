@@ -25,3 +25,12 @@
 .state-menu{
     display: flex;
 }
+
+.post-section{
+    display: flex;
+    flex-direction: column;
+}
+
+post-card{
+    display: contents;
+}

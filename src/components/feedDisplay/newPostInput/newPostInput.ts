@@ -36,11 +36,13 @@ export default class NewPostInput extends HTMLElement {
         <link rel="stylesheet" href="../src/components/feedDisplay/newPostInput/newPostInput.css">
             <form>
                 <section class="upper-sec">
-                    <div class="user-image" style="background-image: url('${this.userimg}');"></div>
-                    <input placeholder="What's up?">
-                </section>
-                <section class="lower-sec">
+                    <div class="input-section">
+                        <div class="user-image" style="background-image: url('${this.userimg}');"></div>
+                        <input placeholder="What's up?">
+                    </div>
                     <button>Publish</button>
+                </section>
+                <section class="lower-sec">  
                 <section>
             </form>
         `;
