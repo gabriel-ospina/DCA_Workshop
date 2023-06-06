@@ -1,6 +1,9 @@
 import { dispatch } from "../../store";
 import { navigate } from "../../store/actions";
 import { Screens } from "../../types/navigation";
+import { newUser } from "./siginUpForm/signUpForm";
+import Firebase from "../../service/firebase";
+
 
 export default class SignUpContainer extends HTMLElement {
     constructor(){
@@ -12,10 +15,13 @@ export default class SignUpContainer extends HTMLElement {
         this.render();
     };
 
-    navtoMain() {
+
+    async handleSigninButton() {
+        await Firebase.registerUser(newUser);
         dispatch(navigate(Screens.MAIN));
-    };
-   
+        alert("you have registered successfully")
+    }
+
     navtoLogin() {
         dispatch(navigate(Screens.LOGIN));
     };
@@ -39,7 +45,7 @@ export default class SignUpContainer extends HTMLElement {
 
                 const signupBtn = this.ownerDocument.createElement("button");
                 signupBtn.innerText = "login";
-                signupBtn.addEventListener("click", this.navtoMain);
+                signupBtn.addEventListener("click", this.handleSigninButton);
                 signupContainer.appendChild(signupBtn)
 
                 const logInLink = this.ownerDocument.createElement("p");
