@@ -59,13 +59,3 @@
 post-card{
     display: contents;
 }
-
-.app-subtitle{
-    font-size: x-large;
-    font-weight: 600;
-    margin: 24px 0 5px 14px;
-}
-
-.app-sb-sidesec{
-    color: #C07699;
-}
