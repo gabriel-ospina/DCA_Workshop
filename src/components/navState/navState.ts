@@ -19,7 +19,7 @@ export default class NavStateMenu extends HTMLElement {
 
         <nav class="nav-state">
             <span>
-                <button>Match</button>
+                <button class="active-state">Match</button>
                 <button>Feed</button>
             </span>
         </nav>

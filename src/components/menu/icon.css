@@ -2,3 +2,33 @@ svg{
     height: 17px;
     padding: 15px 0px;
 }
+
+@media screen and (max-width: 391px){
+    svg{
+        height: 21px;
+    }
+}
+
+span{
+    color: rgb(129, 108, 173);
+    padding: 16px 0 15px 5px;
+}
+
+.main-selec{
+    width: 90px;
+    display: flex;
+    justify-content: center;
+    border-bottom: solid 4px rgb(129, 108, 173);
+}
+
+@media screen and (max-width: 391px){
+    .main-selec{
+        font-size: 20px;
+        width: fit-content;
+        padding: 0 27px;
+        border: none;
+        background-color: rgba(163, 125, 144, 0.3);
+        border-radius: 28px;
+        align-items: center;
+    }
+}

@@ -50,7 +50,8 @@ export default class Main extends HTMLElement{
                     const newMatchSection = this.ownerDocument.createElement("section")
                     newMatchSection.setAttribute("class","newMatchSection")
 
-                    const newMatTitle = this.ownerDocument.createElement("h1");
+                    const newMatTitle = this.ownerDocument.createElement("h1"); 
+                            newMatTitle.setAttribute("class", "app-subtitle app-sb-sidesec")
                             const newMatText = this.ownerDocument.createTextNode("New Matches");
                             newMatTitle.appendChild(newMatText)
                         newMatchSection.appendChild(newMatTitle)

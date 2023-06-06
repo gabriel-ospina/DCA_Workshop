@@ -1,0 +1,6 @@
+.main-selec{
+    display: flex;
+    border-bottom: solid 3px rgb(129, 108, 173);
+    border-radius: 20px;
+}
+

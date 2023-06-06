@@ -92,37 +92,51 @@ export default class MainCard extends HTMLElement{
         const mainCardSection = this.ownerDocument.createElement('section');
         mainCardSection.setAttribute("class","mainCardSection")
 
-        const userCard = this.ownerDocument.createElement("app-ucardsection");
-            userCard.setAttribute(userCardAtt.name, this.name);
-            userCard.setAttribute(userCardAtt.age, this.age);
-            userCard.setAttribute(userCardAtt.gender, this.gender);
-            userCard.setAttribute(userCardAtt.udistance, this.udistance);
-            userCard.setAttribute(userCardAtt.image, this.image);
+            const userCard = this.ownerDocument.createElement("app-ucardsection");
+                userCard.setAttribute(userCardAtt.name, this.name);
+                userCard.setAttribute(userCardAtt.age, this.age);
+                userCard.setAttribute(userCardAtt.gender, this.gender);
+                userCard.setAttribute(userCardAtt.udistance, this.udistance);
+                userCard.setAttribute(userCardAtt.image, this.image);
+            
 
-        mainCardSection.appendChild(userCard);
+            const userDetailSection = this.ownerDocument.createElement("section")
+                userDetailSection.setAttribute("class", "user-detail-section")
 
-        const tagSection = this.ownerDocument.createElement("section");
-            const tag = this.ownerDocument.createElement("app-tag");
-            tag.setAttribute(tagAttributes.tag1, this.tag1);
-            tag.setAttribute(tagAttributes.tag2, this.tag2);
-            tag.setAttribute(tagAttributes.tag3, this.tag3);
-            tag.setAttribute(tagAttributes.tag4, this.tag4);
-            tag.setAttribute(tagAttributes.tag5, this.tag5);
-        tagSection.appendChild(tag);
+                const tag = this.ownerDocument.createElement("app-tag");
+                tag.setAttribute("class","tag-section u-section")
 
-        const musicCardSec = this.ownerDocument.createElement("section");
-            const musicCard = this.ownerDocument.createElement("music-card");
-            musicCard.setAttribute(musicCardAtt.thumbnail1, this.thumbnail1);
-            musicCard.setAttribute(musicCardAtt.mtitle1, this.mtitle1);
-            musicCard.setAttribute(musicCardAtt.thumbnail2, this.thumbnail2);
-            musicCard.setAttribute(musicCardAtt.mtitle2, this.mtitle2);
-            musicCard.setAttribute(musicCardAtt.thumbnail3, this.thumbnail3);
-            musicCard.setAttribute(musicCardAtt.mtitle3, this.mtitle3);
-        musicCardSec.appendChild(musicCard);
-        
+                    const tagTitle = this.ownerDocument.createElement("h3")
+                        const tagText = this.ownerDocument.createTextNode("Interests")
+                    tagTitle.appendChild(tagText)
 
-        mainCardSection.appendChild(tagSection);
-        mainCardSection.appendChild(musicCardSec);
+                    tag.setAttribute(tagAttributes.tag1, this.tag1);
+                    tag.setAttribute(tagAttributes.tag2, this.tag2);
+                    tag.setAttribute(tagAttributes.tag3, this.tag3);
+                    tag.setAttribute(tagAttributes.tag4, this.tag4);
+                    tag.setAttribute(tagAttributes.tag5, this.tag5);
+
+                    const musicCard = this.ownerDocument.createElement("music-card");
+                    musicCard.setAttribute("class","music-card-section u-section")
+                        
+                        const musicTitle = this.ownerDocument.createElement("h3")
+                            const musicText = this.ownerDocument.createTextNode("Music")
+                        musicTitle.appendChild(musicText)
+
+                        musicCard.setAttribute(musicCardAtt.thumbnail1, this.thumbnail1);
+                        musicCard.setAttribute(musicCardAtt.mtitle1, this.mtitle1);
+                        musicCard.setAttribute(musicCardAtt.thumbnail2, this.thumbnail2);
+                        musicCard.setAttribute(musicCardAtt.mtitle2, this.mtitle2);
+                        musicCard.setAttribute(musicCardAtt.thumbnail3, this.thumbnail3);
+                        musicCard.setAttribute(musicCardAtt.mtitle3, this.mtitle3);
+
+            userDetailSection.appendChild(tagTitle)
+            userDetailSection.appendChild(tag);
+            userDetailSection.appendChild(musicTitle)
+            userDetailSection.appendChild(musicCard);
+
+        mainCardSection.appendChild(userCard); 
+        mainCardSection.appendChild(userDetailSection);
 
 
         this.shadowRoot?.appendChild(mainCardSection);

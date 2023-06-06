@@ -5,6 +5,13 @@
     box-shadow: 0 0 26px 0 rgba(129, 108, 173, 0.35);
 }
 
+@media screen and (max-width: 391px) {
+    .user-card{
+        width: 328px;
+        height: 554px;
+    }
+}
+
 app-userdetail{
     position: relative;
     top: -126px;

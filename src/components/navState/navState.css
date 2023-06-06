@@ -1,16 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    font-family: 'Inter', sans-serif;
+}
+
 .nav-state{
     display: flex;
     width: 100%;
     align-items: center;
     justify-content: space-around;
-    height: 3.2vw;
+    height: fit-content;
     border-bottom: 1px solid #D1D1D1;
 }
 
 button{
-    width: 80px;
-    height: 36px;
+    width: fit-content;
+    height: 52px;
+    padding: 0 10px 0 10px;
+    font-size: x-large;
+    font-weight: 600;
+    color:#D1D1D1;
     border: none;
     background-color: transparent;
     cursor: pointer;
+}
+
+.active-state{
+    color: rgb(129, 108, 173);
+    border-bottom: solid 4px rgb(129, 108, 173);
+}
+
+@media screen and (max-width: 391px){
+    nav{
+        visibility: hidden;
+    }
 }

@@ -1,7 +1,45 @@
+h3{
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #463B5D;
+}
+
 .mainCardSection{
     display: flex;
     flex-direction: row;
     height: 75%;
     justify-content: center;
     align-items: center;
+}
+
+@media screen and (max-width: 391px){
+    .mainCardSection{
+        justify-content: flex-start;
+        margin: -42px 0 0 32px;
+    }
+}  
+
+.var-section{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.user-detail-section{
+    width: 270px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 10px;
+}
+
+@media screen and (max-width: 391px){
+    .user-detail-section{
+        visibility: hidden;
+    }
+}
+
+.u-section{
+    display: flex;
+    flex-wrap: wrap;
 }

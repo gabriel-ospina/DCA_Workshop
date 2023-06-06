@@ -1,4 +1,4 @@
-import { MenuAtt } from "./menu/menu";
+import { MenuAtt } from "../menu/menu";
 
 export enum SideSectionAtt {
     "mainicon" = "mainicon"

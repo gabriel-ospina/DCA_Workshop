@@ -1,9 +1,19 @@
 header{
     height: 3vw;
-    padding: 5px 40px;
+    padding: 10px 62px;
     display: flex;
     flex-flow: row;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #D1D1D1;
+}
+
+@media screen and (max-width: 391px){
+    header{
+        margin: 39px 0 0 0;
+        height: auto;
+        border: none;
+        padding: 0;
+        flex-direction: row-reverse;
+    }
 }

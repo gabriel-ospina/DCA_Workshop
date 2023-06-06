@@ -2,12 +2,13 @@
     background-size: cover;
     width: 85px;
     height: 85px;
+    margin-right: 5px;
     border-radius: 7px;
 }
 
 p{
     font-family: 'Inter', sans-serif;
-    font-size: 14px;
+    font-size: 13px;
     margin-top: 5px;
     width: 70px;
 }

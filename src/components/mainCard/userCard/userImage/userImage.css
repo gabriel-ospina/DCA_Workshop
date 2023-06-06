@@ -9,3 +9,10 @@
    flex-direction: column;
    border-radius: 16px 16px 0 0;
 }
+
+@media screen and (max-width: 391px) {
+    .user-image{
+    width: auto;
+    height: 467.05px;
+    }
+}

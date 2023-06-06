@@ -11,13 +11,32 @@
     padding: 0 50px;
 }
 
+@media screen and (max-width: 391px){
+    .newMatchSection{
+        visibility: hidden;
+    }
+}
+
 .sideSection{
     width: 30%;
     border-right: solid 1px #D1D1D1;
 }
 
+@media screen and (max-width: 391px){
+    .sideSection{
+        width: 100%;
+    }
+}
+
+
 .lowContainer{
     display: flex;
+}
+
+@media screen and (max-width: 391px){
+    .lowContainer{
+        flex-direction: column-reverse;
+    }
 }
 
 .r-side-section{
@@ -26,4 +45,14 @@
 
 .state-menu{
     display: flex;
+}
+
+.app-subtitle{
+    font-size: x-large;
+    font-weight: 600;
+    margin: 24px 0 5px 14px;
+}
+
+.app-sb-sidesec{
+    color: #C07699;
 }

@@ -11,10 +11,23 @@ svg{
 
 p{
     color: white;
-    margin-bottom: 0;
+    margin: 0 0 6px 0;
 }
 
 h1{
     color: white;
     margin-bottom: 0;
+    margin-right: 10px;
+}
+
+.user-detail{
+    height: 126px;
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgb(0 0 0 / 59%) 0%, rgba(0,0,0,0) 95%);
+    padding-left: 10px;
+}
+
+.age{
+    font-size: 26px;
+    font-weight: 300;
 }
