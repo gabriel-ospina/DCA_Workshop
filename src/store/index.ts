@@ -18,7 +18,7 @@ onAuthStateChanged(auth, (user) => {
 
 const emptyState: AppState = {
     
-    screen: Screens.LOGIN,
+    screen: Screens.SIGNUP,
     
     header: {
         img: "",
